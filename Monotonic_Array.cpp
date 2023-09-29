@@ -1,3 +1,5 @@
+// Leetcode Easy Problem
+// Approach - 01
 class Solution {
 public:
     bool isMonotonic(vector<int>& nums) {
@@ -20,5 +22,29 @@ public:
         }
        }
        return true;
+    }
+};
+
+
+
+
+
+
+// Approach - 02
+class Solution {
+public:
+    bool isMonotonic(vector<int>& arr) {
+       int n=arr.size();
+        bool increase=true;
+        bool decrease=true;
+        for(int i=1;i<n;i++){
+            if(arr[i]>arr[i-1]){
+                increase=false;
+            }
+            if(arr[i]<arr[i-1]){
+                decrease=false;
+            }
+        }
+        return increase or decrease;
     }
 };
